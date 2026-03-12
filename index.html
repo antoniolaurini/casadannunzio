@@ -1,236 +1,255 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orari di apertura - Museo casa natale di Gabriele d'Annunzio</title>
-  <style>
-    :root {
-      --bg: #f6f1ea;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #7c2d12;
-      --accent-light: #f3e8e2;
-      --border: #e5e7eb;
-      --closed: #b91c1c;
-      --open: #166534;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-    }
+<title>Museo Casa Natale di Gabriele d'Annunzio</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #efe7dc 0%, var(--bg) 100%);
-      color: var(--text);
-      line-height: 1.5;
-    }
+<style>
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 20px 48px;
-    }
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
+    color:#333;
+}
 
-    .hero {
-      background: linear-gradient(135deg, rgba(124,45,18,0.95), rgba(146,64,14,0.9));
-      color: #fff;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
-    }
+/* HEADER */
 
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 2rem;
-    }
+header{
+    background:#7b1e1e;
+    color:white;
+    padding:20px 40px;
+}
 
-    .hero p {
-      margin: 0;
-      opacity: 0.95;
-      font-size: 1rem;
-    }
+header h1{
+    margin:0;
+}
 
-    .grid {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 1.3fr 0.9fr;
-    }
+nav{
+    margin-top:10px;
+}
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+    font-weight:bold;
+}
 
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 1.35rem;
-      color: var(--accent);
-    }
+/* HERO */
 
-    .badge {
-      display: inline-block;
-      padding: 8px 12px;
-      background: var(--accent-light);
-      color: var(--accent);
-      border-radius: 999px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
+.hero{
+    height:420px;
+    background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url("https://upload.wikimedia.org/wikipedia/commons/7/7e/Museo_casa_natale_Gabriele_D%27Annunzio_Pescara.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
 
-    .hours {
-      display: grid;
-      gap: 10px;
-    }
+.hero h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
 
-    .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: #fafafa;
-    }
+.hero p{
+    font-size:18px;
+}
 
-    .day {
-      font-weight: 700;
-    }
+/* SECTIONS */
 
-    .time.open {
-      color: var(--open);
-      font-weight: 700;
-    }
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
 
-    .time.closed {
-      color: var(--closed);
-      font-weight: 700;
-    }
+.section-title{
+    font-size:28px;
+    margin-bottom:20px;
+    border-left:5px solid #7b1e1e;
+    padding-left:10px;
+}
 
-    .info p,
-    .info li {
-      color: var(--text);
-    }
+/* CARDS */
 
-    .info ul {
-      padding-left: 18px;
-      margin-bottom: 0;
-    }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-    .meta {
-      margin-top: 18px;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
+.card{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-    .footer-note {
-      margin-top: 24px;
-      font-size: 0.92rem;
-      color: var(--muted);
-      text-align: center;
-    }
+/* INFO */
 
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+.info{
+    background:#eee;
+    padding:30px;
+    border-radius:10px;
+}
 
-      .hero h1 {
-        font-size: 1.6rem;
-      }
+/* FOOTER */
 
-      .row {
-        padding: 12px;
-      }
-    }
-  </style>
+footer{
+    background:#222;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+footer a{
+    color:#ddd;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <header class="hero">
-      <h1>Museo casa natale di Gabriele d'Annunzio</h1>
-      <p>Orari di apertura e informazioni utili per la visita</p>
-    </header>
 
-    <main class="grid">
-      <section class="card">
-        <h2>Apertura</h2>
-        <div class="badge">Prenotazione: non richiesta</div>
+<header>
+<h1>Museo Casa Natale di Gabriele d'Annunzio</h1>
 
-        <div class="hours">
-          <div class="row">
-            <span class="day">Lunedì</span>
-            <span class="time closed">Chiuso</span>
-          </div>
-          <div class="row">
-            <span class="day">Martedì</span>
-            <span class="time open">09:00 - 13:30</span>
-          </div>
-          <div class="row">
-            <span class="day">Mercoledì</span>
-            <span class="time open">09:00 - 13:30</span>
-          </div>
-          <div class="row">
-            <span class="day">Giovedì</span>
-            <span class="time open">09:00 - 19:30</span>
-          </div>
-          <div class="row">
-            <span class="day">Venerdì</span>
-            <span class="time open">09:00 - 19:30</span>
-          </div>
-          <div class="row">
-            <span class="day">Sabato</span>
-            <span class="time open">09:00 - 19:30</span>
-          </div>
-          <div class="row">
-            <span class="day">Domenica</span>
-            <span class="time open">09:00 - 13:30</span>
-          </div>
-        </div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Il Museo</a>
+<a href="#">Orari</a>
+<a href="#">Visita</a>
+<a href="#">Contatti</a>
+</nav>
+</header>
 
-        <p class="meta">
-          Dati ricavati dalla sezione “Apertura” della pagina ufficiale del Ministero della Cultura.
-        </p>
-      </section>
 
-      <aside class="card info">
-        <h2>Informazioni apertura</h2>
-        <p><strong>Come raggiungerci:</strong></p>
-        <ul>
-          <li>
-            <strong>In auto:</strong> raggiungere Piazza Garibaldi o Piazza Unione
-            (il museo si trova in una ZTL) e seguire le indicazioni per il parcheggio.
-          </li>
-          <li>
-            <strong>In bus:</strong> dalla stazione di Pescara prendere il 6, l'11,
-            il 7 o il 13, scendere alla fermata di via Conte di Ruvo o a via d'Annunzio,
-            appena dopo il ponte.
-          </li>
-          <li>
-            <strong>Parcheggio:</strong> il più vicino è situato nell'area di risulta
-            del lungofiume, accessibile sia dalla rotonda di Piazza Unione sia da via Orazio.
-            Dista circa 100 metri dal museo.
-          </li>
-        </ul>
+<section class="hero">
+<div>
+<h2>La casa dove nacque il Vate</h2>
+<p>Scopri la storia e la vita di Gabriele d'Annunzio nel luogo della sua nascita</p>
+</div>
+</section>
 
-        <p class="meta">
-          Indirizzo: corso Manthonè, 116 - 65127 Pescara (PE)
-        </p>
-      </aside>
-    </main>
 
-    <div class="footer-note">
-      Ultimo aggiornamento della pagina sorgente: 4 marzo 2026
-    </div>
-  </div>
+<section class="container">
+
+<h2 class="section-title">Il Museo</h2>
+
+<p>
+Il Museo Casa Natale di Gabriele d'Annunzio si trova nel centro storico di Pescara,
+in Corso Manthonè 116, nell'edificio dove il poeta nacque il 12 marzo 1863
+e trascorse i primi anni della sua vita. :contentReference[oaicite:1]{index=1}
+</p>
+
+<p>
+La casa fu dichiarata <strong>Monumento Nazionale nel 1927</strong> e oggi
+è gestita dal Ministero della Cultura. :contentReference[oaicite:2]{index=2}
+</p>
+
+<p>
+Le stanze conservano l'atmosfera ottocentesca con arredi e decorazioni
+d'epoca e ospitano documenti, cimeli e materiali dedicati alla vita
+e alle opere di uno dei più importanti scrittori italiani. :contentReference[oaicite:3]{index=3}
+</p>
+
+</section>
+
+
+<section class="container">
+
+<h2 class="section-title">Cosa vedere</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Le stanze originali</h3>
+<p>
+Le cinque stanze principali conservano l'aspetto originario
+della casa in cui d'Annunzio trascorse la sua infanzia.
+</p>
+</div>
+
+<div class="card">
+<h3>Documenti e cimeli</h3>
+<p>
+Lettere, oggetti personali e testimonianze storiche
+raccontano la vita e la carriera del poeta.
+</p>
+</div>
+
+<div class="card">
+<h3>Biblioteca</h3>
+<p>
+Il museo conserva libri e materiali legati
+alla produzione letteraria dannunziana.
+</p>
+</div>
+
+<div class="card">
+<h3>Spazi espositivi</h3>
+<p>
+Il museo ospita anche mostre e attività culturali
+dedicate alla letteratura e alla storia.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container">
+
+<h2 class="section-title">Informazioni per la visita</h2>
+
+<div class="info">
+
+<p><strong>Indirizzo</strong><br>
+Corso Manthonè 116<br>
+65127 Pescara (PE)
+</p>
+
+<p><strong>Telefono</strong><br>
++39 085 60391
+</p>
+
+<p><strong>Email</strong><br>
+drm-abr.casanataledannunzio@cultura.gov.it
+</p>
+
+<p>
+Il museo fa parte della rete dei musei statali
+della Direzione Regionale Musei Abruzzo.
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+Museo Casa Natale di Gabriele d'Annunzio
+</p>
+
+<p>
+Sito informativo ispirato alla pagina ufficiale del Ministero della Cultura
+</p>
+
+<p>
+© Ministero della Cultura
+</p>
+
+</footer>
+
 </body>
 </html>
